@@ -1,6 +1,5 @@
-//window.onload = function () {
-$(document).ready(function () {
-  var dotCount = 30;
+window.onload = function () {
+  var dotCount = 20;
   var hundredPointsArray = [];
   for (var i = 0; i < dotCount; i++) {
     hundredPointsArray +=
@@ -53,8 +52,7 @@ $(document).ready(function () {
   }
 
   $(".cube").append("<div class=" + "line-container" + "></div>");
-});
-//};
+};
 
 activeNumber = 0;
 timesClicked = 0;

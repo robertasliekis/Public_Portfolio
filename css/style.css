@@ -55,45 +55,6 @@ body {
   font-weight: 400;
 }
 
-.button-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-  cursor: pointer;
-}
-
-.button-text .line {
-  width: 0%;
-  height: 1px;
-  background-color: var(--global-color-grey);
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
-
-.button-text:hover {
-  color: var(--global-color-orange);
-}
-
-.button-text:hover .line {
-  width: 100%;
-  background-color: var(--global-color-orange);
-}
-
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -830,38 +791,6 @@ body {
   width: 15rem;
 }
 
-.contact-section .contact-content .contact-bottom .social-media-icons .circle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 4rem;
-  width: 4rem;
-  border-radius: 3rem;
-  background-color: var(--global-color3);
-  border: 3px solid white;
-  -webkit-box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.25);
-          box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.25);
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-
-.contact-section .contact-content .contact-bottom .social-media-icons .circle .icon {
-  font-size: 2rem;
-  color: white;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-
-.contact-section .contact-content .contact-bottom .social-media-icons .circle:hover {
-  background-color: var(--global-color-pink);
-}
-
 @media only screen and (max-width: 1250px) {
   .wrapper {
     display: -webkit-box;
@@ -883,6 +812,23 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
+  .button-wide:hover,
+  .button-round:hover {
+    background-color: var(--global-color3);
+  }
+  .welcome-section .welcome-content .button-wide:hover {
+    background-color: transparent;
+  }
+  .projects-section .projects-content .projects .project .project-image .project-overlay .buttons .button3:hover {
+    width: 4rem;
+  }
+  .projects-section .projects-content .projects .project .project-image .project-overlay .buttons .button3:hover .text {
+    opacity: 0;
+    width: 0;
+  }
+  .projects-section .projects-content .projects .project .project-image .project-overlay:hover {
+    background-color: transparent;
+  }
   .contact-section .contact-content {
     width: 100%;
   }
