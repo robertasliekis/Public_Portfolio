@@ -1,4 +1,5 @@
-window.onload = function () {
+//window.onload = function () {
+$(document).ready(function () {
   var dotCount = 30;
   var hundredPointsArray = [];
   for (var i = 0; i < dotCount; i++) {
@@ -12,9 +13,10 @@ window.onload = function () {
     var sheet = document.createElement("style");
     var circle = document.querySelectorAll(".cube");
 
-    var colors = ["cyan", "rgb(218, 0, 218)", "rgb(0, 69, 218)"];
+    var colors = ["cyan", "rgb(236, 70, 139)", "rgb(255, 255, 255)"];
     var colorRandom = colors[Math.floor(Math.random() * colors.length)];
 
+    opacityDot = Math.random() + 0.1;
     positionDot = Math.floor(Math.random() * 35) + 1 + i * 25;
     animationDurationDot = 15 + i * 3;
     sheet.textContent =
@@ -27,6 +29,9 @@ window.onload = function () {
       ";" +
       "background-color:" +
       colorRandom +
+      ";" +
+      "opacity:" +
+      opacityDot +
       ";" +
       "animation-duration:" +
       animationDurationDot +
@@ -48,7 +53,8 @@ window.onload = function () {
   }
 
   $(".cube").append("<div class=" + "line-container" + "></div>");
-};
+});
+//};
 
 activeNumber = 0;
 timesClicked = 0;
@@ -83,7 +89,7 @@ $(".button2").click(function () {
 //Scroll to top button start
 
 const scrollToProjects = document.querySelector("#button-scroll");
-projectsOffset = $(".projects-section").offset().top + 48;
+projectsOffset = $(".projects-section").offset().top + 60;
 scrollToProjects.addEventListener("click", function () {
   $("html,body").animate({ scrollTop: projectsOffset }, "slow");
 });

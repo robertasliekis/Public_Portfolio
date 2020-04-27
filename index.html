@@ -21,10 +21,11 @@
         </div>
         <div class="welcome-content container">
           <div class="welcome-text">
-            <div class="text-line">
-              Hello, I'm <span class="colored-text">ROBERTAS LIEKIS.</span>
+            <div class="text-line text-line1">
+              Hello, I'm
+              <span class="colored-text">ROBERTAS LIEKIS.</span>
             </div>
-            <div class="text-line">I'm front-end web developer.</div>
+            <div class="text-line text-line2">I'm front-end developer.</div>
             <div class="button-wide" id="button-scroll">
               View my work
               <div class="icon-container">
@@ -44,62 +45,60 @@
         <div class="about-content container">
           <h1 class="content-heading">ABOUT</h1>
 
-          <div class="about-text">
-            <div class="my-info">
-              <div class="my-picture"></div>
-              <p>
-                I am a front-end developer based in Vilnius, Lithuania. Started
-                learning front-end development by myself in december 2019.
-                Before becoming a developer I was working with 3d graphics and
-                animations where I learned a lot creative thinking, animations,
-                timing, design, product delivery and keeping work simple.
-              </p>
+          <div class="about-info">
+            <div class="profile-picture"></div>
+            <p>
+              I am a front-end developer based in Vilnius, Lithuania. Started
+              learning front-end development by myself in december 2019. Before
+              becoming a developer I was working with 3d graphics and animations
+              where I learned a lot creative thinking, animations, timing,
+              design, product delivery and keeping work simple.
+            </p>
+          </div>
+
+          <div class="technologies-list">
+            <div class="technology">
+              <div class="dot"></div>
+              HTML
             </div>
+            <div class="technology">
+              <div class="dot"></div>
 
-            <div class="technologies-list">
-              <div class="technology">
-                <div class="dot"></div>
-                HTML
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
+              CSS
+            </div>
+            <div class="technology">
+              <div class="dot"></div>
 
-                CSS
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
+              Sass
+            </div>
+            <div class="technology">
+              <div class="dot"></div>
 
-                Sass
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
+              JavaScript
+            </div>
+            <div class="technology">
+              <div class="dot"></div>
 
-                JavaScript
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
+              jQuery
+            </div>
+            <div class="technology">
+              <div class="dot"></div>
+              Git
+            </div>
+            <div class="technology">
+              <div class="dot"></div>
 
-                jQuery
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
-                Git
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
+              GitHub
+            </div>
+            <div class="technology">
+              <div class="dot"></div>
 
-                GitHub
-              </div>
-              <div class="technology">
-                <div class="dot"></div>
-
-                Photoshop
-              </div>
+              Photoshop
             </div>
           </div>
         </div>
       </div>
-      <!-- Info section end -->
+      <!-- Info section end --> 
 
       <!-- Projects section start -->
       <div class="projects-section wrapper">
@@ -321,64 +320,52 @@
         </div>
         <div class="contact-content container">
           <h1 class="content-heading">CONTACT</h1>
-          <div class="contact-frame">
-            <div class="contact-info">
-              <h3>
-                Let's get in touch!
-              </h3>
-              <p class="email">
-                <i class="fas fa-envelope icon"></i>robertasliekis@gmail.com
-              </p>
-              <p>
-                <i class="fas fa-map-marker-alt icon"></i>Vilnius, Lithuania
-              </p>
+          <form class="message-section">
+            <div class="input-field name-input">
+              <label class="label-name" for="name"></label>
+              <input
+                class="text-input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+              />
             </div>
-            <form class="message-section">
-              <div class="input-field">
-                <label class="label-name" for="name"></label>
-                <input
-                  class="text-input"
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name"
-                />
-              </div>
-              <div class="input-field">
-                <label class="label-name" for="email"></label>
-                <input
-                  class="text-input"
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div class="input-field">
-                <label class="label-name" for="subject"></label>
-                <input
-                  class="text-input"
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="Subject"
-                />
-              </div>
-              <label for="message" class="label-name"></label>
+            <div class="input-field email-input">
+              <label class="label-name" for="email"></label>
+              <input
+                class="text-input"
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="input-field subject-input">
+              <label class="label-name" for="subject"></label>
+              <input
+                class="text-input"
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+              />
+            </div>
+            <label for="message" class="label-name"></label>
 
-              <div class="input-field input-field-message">
-                <textarea
-                  id="message"
-                  rows="8"
-                  cols="50"
-                  name="comment"
-                  form="usrform"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-              <div class="button-wide">Send Message</div>
-            </form>
-          </div>
+            <div class="input-field input-field-message">
+              <textarea
+                id="message"
+                rows="8"
+                cols="50"
+                name="comment"
+                form="usrform"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+            <div class="button-wide button-send">Send Message</div>
+          </form>
+
           <div class="contact-bottom">
             <p class="author">© 2020 <span>ROBERTAS LIEKIS</span></p>
             <div class="social-media-icons">
