@@ -16,8 +16,6 @@
   --global-color2: rgb(48, 114, 168);
   --global-color3: rgb(30, 71, 105);
 
-  --global-color-background: black;
-  --global-color-orange: orange;
   --animation-radius: -150px;
   --global-margin: 3rem;
 }
@@ -153,7 +151,6 @@ body {
   border: 3px solid white;
   padding: 1rem 2rem;
   transition: 0.5s all ease;
-  margin-top: 1rem;
   border-radius: 2rem;
   box-shadow: 5px 5px 25px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -211,11 +208,9 @@ body {
     position: absolute;
     width: 4px;
     height: 4px;
-    background-color: white;
     border-radius: 2px;
     top: 50%;
     left: 60%;
-    opacity: 0.5;
     animation-name: rot;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -250,14 +245,6 @@ body {
     }
   }*/
 
-  /* @keyframes rot {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(500%);
-    }
-  }*/
   .welcome-content {
     @include flexCenter();
     justify-content: flex-start;
@@ -274,6 +261,9 @@ body {
           letter-spacing: 0.5rem;
         }
       }
+      .text-line2 {
+        margin-bottom: 1rem;
+      }
     }
   }
 }
@@ -286,47 +276,39 @@ body {
   .about-content {
     @include flexCenterColumn();
     align-items: flex-start;
-    .about-text {
-      @include flexCenterColumn();
-      color: white;
+    .about-info {
+      @include flexCenterBetween();
       p {
+        color: white;
+        margin-left: 2rem;
+        text-align: justify;
         font-size: 1.5rem;
+        width: calc(100% - 15rem);
       }
-      .my-info {
-        @include flexCenter();
-        p {
-          width: 90%;
-          margin-left: 2rem;
-          text-align: justify;
-        }
-        .my-picture {
-          width: 15rem;
-          height: 15rem;
-          background-image: url(../images/me.jpg);
-          background-position: center;
-          background-size: cover;
-          border-radius: 8rem;
-        }
+      .profile-picture {
+        width: 15rem;
+        height: 15rem;
+        background-image: url(../images/me.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 8rem;
       }
-      .technologies-list {
+    }
+    .technologies-list {
+      @include flexCenter();
+      justify-content: flex-start;
+      margin-top: 2rem;
+      .technology {
         @include flexCenter();
-        justify-content: flex-start;
-        margin-top: 2rem;
-        .technology {
-          @include flexCenter();
-          margin-right: 2rem;
-          color: var(--global-color-pink);
-          //color: white;
-          font-size: 1.5rem;
-          .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 3px;
-            background-color: var(--global-color-pink);
-            // background-color: white;
-
-            margin-right: 0.5rem;
-          }
+        margin-right: 2rem;
+        color: var(--global-color-pink);
+        font-size: 1.5rem;
+        .dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 3px;
+          background-color: var(--global-color-pink);
+          margin-right: 0.5rem;
         }
       }
     }
@@ -352,7 +334,7 @@ body {
         box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
         width: 100%;
         overflow: hidden;
-        border-radius: 0.5rem;
+        border-radius: 2rem;
         .project-image {
           position: relative;
           width: 100%;
@@ -366,7 +348,7 @@ body {
             width: 100%;
             height: 100%;
             opacity: 1;
-            background-color: rgba($color: #141038, $alpha: 0.5);
+            background-color: rgba($color: #ffffff, $alpha: 0);
             transition: 0.5s all ease;
             .buttons {
               position: relative;
@@ -457,7 +439,7 @@ body {
   position: relative;
   height: 0rem;
   transform: translateY(-15rem);
-  transition: 0.25s all ease;
+  transition: 0.3s all ease;
   transform-origin: top center;
   background-color: white;
   .title {
@@ -466,7 +448,7 @@ body {
     padding: 1rem 2rem;
     width: 100%;
     font-size: 2rem;
-    transition: 0.5s all ease;
+    transition: 0.3s all ease;
     font-weight: 600;
     letter-spacing: 0.2rem;
     border-bottom: 4px solid var(--global-color-pink);
@@ -486,58 +468,42 @@ body {
   .contact-content {
     @include flexCenterColumn();
     align-items: flex-start;
-
-    .contact-frame {
+    .message-section {
       @include flexCenterBetween();
-      align-items: flex-start;
-      background-color: var(--global-color3);
-      background-color: white;
+      flex-wrap: wrap;
       width: 100%;
-      height: auto;
-      border-radius: 1rem;
-      .contact-info {
-        @include flexCenterColumn();
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 33%;
-        height: 100%;
-        padding: 2rem;
-        font-size: 1.5rem;
-        p {
-          font-weight: 300;
+      background-color: var(--global-color3);
+      padding: 2rem;
+      border-radius: 2rem;
+      border: 3px solid rgba($color: #ffffff, $alpha: 1);
+      .input-field {
+        width: 100%;
+        margin-bottom: 1rem;
+        input {
+          height: 3rem;
         }
-        .email {
-          margin: 1.5rem 0;
-        }
-        .icon {
-          margin-right: 0.5rem;
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.5rem 0.5rem;
+          border-radius: 1rem;
+          border: none;
+          font-family: "Barlow", Helvetica, Sans-Serif;
+          font-size: 1.1rem;
         }
       }
-      .message-section {
-        @include flexCenterColumn();
-        align-items: flex-end;
-        width: 67%;
-        background-color: var(--global-color3);
-        padding: 2rem;
-        border-radius: 0 0.9rem 0.9rem 0;
-        .input-field {
-          width: 100%;
-          margin-bottom: 1rem;
-          input {
-            height: 2rem;
-          }
-          input,
-          textarea {
-            width: 100%;
-            padding: 0.5rem 0.5rem;
-            border-radius: 0.5rem;
-            border: none;
-            font-family: "Barlow", Helvetica, Sans-Serif;
-            font-size: 1.1rem;
-          }
-        }
+      .name-input,
+      .email-input {
+        width: calc(50% - 0.5rem);
+      }
+      .subject-input {
+        width: 100%;
+      }
+      .button-send {
+        margin-left: auto;
       }
     }
+
     .contact-bottom {
       @include flexCenterBetween();
       width: 100%;
@@ -578,6 +544,152 @@ body {
     }
   }
 }
-
 //Contact section end
 //Website body end
+
+@media only screen and (max-width: 1250px) {
+  .wrapper {
+    @include flexCenter();
+    width: 100%;
+    .container {
+      width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .contact-section {
+    .contact-content {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .welcome-section {
+    .welcome-content {
+      .welcome-text {
+        .text-line {
+          font-size: 3rem;
+          .colored-text {
+            letter-spacing: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .wrapper {
+    .container {
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  .content-heading {
+    letter-spacing: 0.5rem;
+  }
+
+  .welcome-section {
+    .welcome-content {
+      justify-content: center;
+      .welcome-text {
+        align-items: center;
+        .text-line {
+          font-size: 2rem;
+          text-align: center;
+          .colored-text {
+            letter-spacing: 0.1rem;
+            display: block;
+            margin: 0.5rem 0;
+          }
+        }
+      }
+    }
+  }
+
+  //About section start
+  .about-section {
+    @include colorGradient();
+
+    .about-content {
+      @include flexCenterColumn();
+      align-items: center;
+      .about-info {
+        @include flexCenterColumn();
+        p {
+          margin-left: 0;
+          font-size: 1.3rem;
+          width: 100%;
+        }
+        .profile-picture {
+          margin-bottom: 3rem;
+        }
+      }
+      .technologies-list {
+        width: 100%;
+        @include flexCenter();
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        .technology {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .projects-section {
+    .projects-content {
+      align-items: center;
+      .project-open {
+        .project-about {
+          height: 20rem;
+        }
+      }
+    }
+  }
+
+  .project-about {
+    transform: translateY(-20rem);
+    .title {
+      text-align: center;
+      padding: 1rem 1rem;
+    }
+    p {
+      padding: 1rem;
+      text-align: justify;
+    }
+  }
+
+  .contact-section {
+    .contact-content {
+      align-items: center;
+      .message-section {
+        justify-content: center;
+        padding: 1rem;
+        .name-input,
+        .email-input {
+          width: 100%;
+        }
+        .button-send {
+          margin-left: 0;
+        }
+      }
+      .contact-bottom {
+        @include flexCenterColumn();
+        .author {
+          order: 2;
+        }
+        .social-media-icons {
+          order: 1;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
