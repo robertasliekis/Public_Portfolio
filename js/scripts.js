@@ -1,3 +1,9 @@
+//window.addEventListener("resize", () => {
+if (window.innerWidth < 415) {
+  $(".welcome-section").height(window.innerHeight);
+}
+//});
+
 window.addEventListener("resize", () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
