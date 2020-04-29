@@ -23,7 +23,7 @@ window.onload = function () {
     var colorRandom = colors[Math.floor(Math.random() * colors.length)];
 
     opacityDot = Math.random() + 0.1;
-    positionDot = Math.floor(Math.random() * 35) + 1 + i * 25;
+    positionDot = Math.floor(Math.random() * 35) + 1 + i * 35;
     animationDurationDot = 15 + i * 3;
     sheet.textContent =
       "" +
