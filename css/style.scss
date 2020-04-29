@@ -209,8 +209,8 @@ body {
   }
   .cube {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     border-radius: 2px;
     top: 50%;
     left: 60%;
@@ -229,14 +229,6 @@ body {
       bottom: 50%;
       transform-origin: top center;
       cursor: pointer;
-      .line-thin {
-        position: absolute;
-        width: 1px;
-        height: 200rem;
-        background-color: rgba($color: #ffffff, $alpha: 0.3);
-        transform: translate(-50%, 0%);
-        left: 50%;
-      }
     }
   }
 

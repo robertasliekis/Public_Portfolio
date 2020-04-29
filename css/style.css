@@ -283,8 +283,8 @@ body {
 
 .welcome-section .cube {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 2px;
   top: 50%;
   left: 60%;
@@ -312,16 +312,6 @@ body {
   -webkit-transform-origin: top center;
           transform-origin: top center;
   cursor: pointer;
-}
-
-.welcome-section .cube .line-container .line-thin {
-  position: absolute;
-  width: 1px;
-  height: 200rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
-  left: 50%;
 }
 
 .welcome-section .welcome-content {
