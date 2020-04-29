@@ -23,6 +23,11 @@ img {
           box-sizing: border-box;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -130,6 +135,7 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
+  background-color: transparent;
   border: 3px solid white;
   padding: 1rem 2rem;
   -webkit-transition: 0.5s all ease;
@@ -165,6 +171,7 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
+  background-color: transparent;
   border: 3px solid white;
   padding: 1rem 2rem;
   -webkit-transition: 0.5s all ease;
@@ -204,6 +211,44 @@ body {
           transform: rotate(90deg);
 }
 
+.technologies-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.technologies-list .technology {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 2rem;
+  color: var(--global-color-pink);
+  font-size: 1.5rem;
+}
+
+.technologies-list .technology .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: var(--global-color-pink);
+  margin-right: 0.5rem;
+}
+
 .website-wrapper {
   overflow: hidden;
   display: -webkit-box;
@@ -225,14 +270,6 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /*@keyframes rot {
-    from {
-      transform: rotate(0deg) translate(-150px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translate(-150px) rotate(-360deg);
-    }
-  }*/
 }
 
 .welcome-section .background-container {
@@ -288,6 +325,7 @@ body {
 }
 
 .welcome-section .welcome-content {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,6 +411,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .about-section .about-content .about-info p {
@@ -386,49 +425,10 @@ body {
 .about-section .about-content .about-info .profile-picture {
   width: 15rem;
   height: 15rem;
-  background-image: url(../images/me.jpg);
+  background-image: url(../images/me.webp);
   background-position: center;
   background-size: cover;
   border-radius: 8rem;
-}
-
-.about-section .about-content .technologies-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-top: 2rem;
-}
-
-.about-section .about-content .technologies-list .technology {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-right: 2rem;
-  color: var(--global-color-pink);
-  font-size: 1.5rem;
-}
-
-.about-section .about-content .technologies-list .technology .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: var(--global-color-pink);
-  margin-right: 0.5rem;
 }
 
 .projects-section {
@@ -583,23 +583,23 @@ body {
 }
 
 .projects-section .projects-content .projects .project .project-image1 {
-  background-image: url(../images/project01.jpg);
+  background-image: url(../images/project01.webp);
 }
 
 .projects-section .projects-content .projects .project .project-image2 {
-  background-image: url(../images/project02.jpg);
+  background-image: url(../images/project02.webp);
 }
 
 .projects-section .projects-content .projects .project .project-image3 {
-  background-image: url(../images/project03.jpg);
+  background-image: url(../images/project03.webp);
 }
 
 .projects-section .projects-content .projects .project .project-image4 {
-  background-image: url(../images/project04.jpg);
+  background-image: url(../images/project04.webp);
 }
 
 .projects-section .projects-content .projects .project .project-image5 {
-  background-image: url(../images/project05.jpg);
+  background-image: url(../images/project05.webp);
 }
 
 .projects-section .projects-content .projects .project .project-image6 {
@@ -662,10 +662,33 @@ body {
   border-bottom: 4px solid var(--global-color-pink);
 }
 
-.project-about p {
-  font-size: 1.2rem;
+.project-about .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 1.5rem;
   padding: 2rem;
   font-weight: 300;
+}
+
+.project-about .description .technologies-list {
+  margin-top: 1rem;
 }
 
 .contact-section {
@@ -713,36 +736,79 @@ body {
   border: 3px solid white;
 }
 
-.contact-section .contact-content .message-section .input-field {
+.contact-section .contact-content .message-section label {
+  position: relative;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.contact-section .contact-content .message-section .input-field input {
+.contact-section .contact-content .message-section label .label-invisible {
+  position: absolute;
+  opacity: 0;
+}
+
+.contact-section .contact-content .message-section .label-name,
+.contact-section .contact-content .message-section .label-email {
+  width: calc(50% - 0.25rem);
+}
+
+.contact-section .contact-content .message-section .text-input {
   height: 3rem;
-}
-
-.contact-section .contact-content .message-section .input-field input,
-.contact-section .contact-content .message-section .input-field textarea {
   width: 100%;
   padding: 0.5rem 0.5rem;
   border-radius: 1rem;
   border: none;
+  border: 3px solid transparent;
   font-family: "Barlow", Helvetica, Sans-Serif;
   font-size: 1.1rem;
 }
 
-.contact-section .contact-content .message-section .name-input,
-.contact-section .contact-content .message-section .email-input {
-  width: calc(50% - 0.5rem);
+.contact-section .contact-content .message-section .message-text {
+  height: 15rem;
 }
 
-.contact-section .contact-content .message-section .subject-input {
-  width: 100%;
+.contact-section .contact-content .message-section .alert-message {
+  opacity: 0;
+  color: var(--global-color-pink);
+  font-size: 1.3rem;
+  text-align: center;
+  height: 3.5rem;
+}
+
+.contact-section .contact-content .message-section .alert-message .word1,
+.contact-section .contact-content .message-section .alert-message .word2,
+.contact-section .contact-content .message-section .alert-message .word3,
+.contact-section .contact-content .message-section .alert-message .sign1,
+.contact-section .contact-content .message-section .alert-message .sign2,
+.contact-section .contact-content .message-section .alert-message .sign3 {
+  display: none;
+  margin-left: 0.3rem;
+}
+
+.contact-section .contact-content .message-section .alert-message .sign1,
+.contact-section .contact-content .message-section .alert-message .word2 {
+  margin-left: 0;
 }
 
 .contact-section .contact-content .message-section .button-send {
   margin-left: auto;
+  background-color: transparent;
+}
+
+.contact-section .contact-content .message-section .button-send:hover {
+  background-color: var(--global-color-pink);
+}
+
+.contact-section .contact-content .display-visible {
+  display: inline-block !important;
+}
+
+.contact-section .contact-content .alert-message-visible {
+  opacity: 1 !important;
+}
+
+.contact-section .contact-content .input-border {
+  border: 3px solid var(--global-color-pink) !important;
 }
 
 .contact-section .contact-content .contact-bottom {
@@ -816,8 +882,15 @@ body {
   .button-round:hover {
     background-color: var(--global-color3);
   }
+  .welcome-section .welcome-content .button-wide .icon-container {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
   .welcome-section .welcome-content .button-wide:hover {
     background-color: transparent;
+  }
+  .projects-section .projects-content .projects .project .project-image {
+    background-size: 120%;
   }
   .projects-section .projects-content .projects .project .project-image .project-overlay .buttons .button3:hover {
     width: 4rem;
@@ -870,9 +943,6 @@ body {
     letter-spacing: 0.1rem;
     display: block;
     margin: 0.5rem 0;
-  }
-  .about-section {
-    background: linear-gradient(120deg, var(--global-color1) 0%, var(--global-color2) 100%);
   }
   .about-section .about-content {
     display: -webkit-box;
@@ -930,11 +1000,15 @@ body {
   }
   .about-section .about-content .technologies-list .technology {
     font-size: 1.5rem;
+    margin-right: 1.5rem;
   }
   .projects-section .projects-content {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .projects-section .projects-content .projects .project .project-image {
+    background-size: 200%;
   }
   .projects-section .projects-content .project-open .project-about {
     height: 20rem;
@@ -962,11 +1036,15 @@ body {
             justify-content: center;
     padding: 1rem;
   }
-  .contact-section .contact-content .message-section .name-input,
-  .contact-section .contact-content .message-section .email-input {
+  .contact-section .contact-content .message-section .label-name,
+  .contact-section .contact-content .message-section .label-email {
     width: 100%;
   }
+  .contact-section .contact-content .message-section .input-field-message {
+    margin-bottom: 0;
+  }
   .contact-section .contact-content .message-section .button-send {
+    margin-top: 0;
     margin-left: 0;
   }
   .contact-section .contact-content .contact-bottom {
@@ -994,6 +1072,24 @@ body {
         -ms-flex-order: 1;
             order: 1;
     margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .contact-section .contact-content .contact-bottom {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .content-heading {
+    letter-spacing: 0.3rem;
+  }
+  .contact-section .contact-content .contact-bottom {
+    padding: 0;
+  }
+  .contact-section .contact-content .contact-bottom .author span {
+    letter-spacing: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

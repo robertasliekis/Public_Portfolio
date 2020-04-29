@@ -25,6 +25,11 @@ img {
   box-sizing: border-box;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -127,7 +132,9 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
+  background-color: transparent;
   border: 3px solid white;
+
   padding: 1rem 2rem;
   transition: 0.5s all ease;
   border-radius: 2rem;
@@ -165,6 +172,23 @@ body {
   }
 }
 
+.technologies-list {
+  @include flexCenter();
+  justify-content: flex-start;
+  .technology {
+    @include flexCenter();
+    margin-right: 2rem;
+    color: var(--global-color-pink);
+    font-size: 1.5rem;
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background-color: var(--global-color-pink);
+      margin-right: 0.5rem;
+    }
+  }
+}
 //Global values end
 
 //Website body start
@@ -215,16 +239,9 @@ body {
       }
     }
   }
-  /*@keyframes rot {
-    from {
-      transform: rotate(0deg) translate(-150px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translate(-150px) rotate(-360deg);
-    }
-  }*/
 
   .welcome-content {
+    position: relative;
     @include flexCenter();
     justify-content: flex-start;
     z-index: 1;
@@ -257,6 +274,7 @@ body {
     align-items: flex-start;
     .about-info {
       @include flexCenterBetween();
+      margin-bottom: 2rem;
       p {
         color: white;
         margin-left: 2rem;
@@ -267,28 +285,10 @@ body {
       .profile-picture {
         width: 15rem;
         height: 15rem;
-        background-image: url(../images/me.jpg);
+        background-image: url(../images/me.webp);
         background-position: center;
         background-size: cover;
         border-radius: 8rem;
-      }
-    }
-    .technologies-list {
-      @include flexCenter();
-      justify-content: flex-start;
-      margin-top: 2rem;
-      .technology {
-        @include flexCenter();
-        margin-right: 2rem;
-        color: var(--global-color-pink);
-        font-size: 1.5rem;
-        .dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 3px;
-          background-color: var(--global-color-pink);
-          margin-right: 0.5rem;
-        }
       }
     }
   }
@@ -373,19 +373,19 @@ body {
           }
         }
         .project-image1 {
-          background-image: url(../images/project01.jpg);
+          background-image: url(../images/project01.webp);
         }
         .project-image2 {
-          background-image: url(../images/project02.jpg);
+          background-image: url(../images/project02.webp);
         }
         .project-image3 {
-          background-image: url(../images/project03.jpg);
+          background-image: url(../images/project03.webp);
         }
         .project-image4 {
-          background-image: url(../images/project04.jpg);
+          background-image: url(../images/project04.webp);
         }
         .project-image5 {
-          background-image: url(../images/project05.jpg);
+          background-image: url(../images/project05.webp);
         }
         .project-image6 {
           background-image: url(../images/project06.jpg);
@@ -432,10 +432,16 @@ body {
     letter-spacing: 0.2rem;
     border-bottom: 4px solid var(--global-color-pink);
   }
-  p {
-    font-size: 1.2rem;
+  .description {
+    @include flexCenterColumn();
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5rem;
     padding: 2rem;
     font-weight: 300;
+    .technologies-list {
+      margin-top: 1rem;
+    }
   }
 }
 //Projects section end
@@ -455,32 +461,72 @@ body {
       padding: 2rem;
       border-radius: 2rem;
       border: 3px solid rgba($color: #ffffff, $alpha: 1);
-      .input-field {
+      label {
+        position: relative;
         width: 100%;
-        margin-bottom: 1rem;
-        input {
-          height: 3rem;
-        }
-        input,
-        textarea {
-          width: 100%;
-          padding: 0.5rem 0.5rem;
-          border-radius: 1rem;
-          border: none;
-          font-family: "Barlow", Helvetica, Sans-Serif;
-          font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        .label-invisible {
+          position: absolute;
+          opacity: 0;
         }
       }
-      .name-input,
-      .email-input {
-        width: calc(50% - 0.5rem);
+      .label-name,
+      .label-email {
+        width: calc(50% - 0.25rem);
       }
-      .subject-input {
+      .text-input {
+        height: 3rem;
         width: 100%;
+        padding: 0.5rem 0.5rem;
+        border-radius: 1rem;
+        border: none;
+        border: 3px solid transparent;
+        font-family: "Barlow", Helvetica, Sans-Serif;
+        font-size: 1.1rem;
+      }
+      .message-text {
+        height: 15rem;
+      }
+
+      .alert-message {
+        opacity: 0;
+        color: var(--global-color-pink);
+        font-size: 1.3rem;
+        text-align: center;
+        height: 3.5rem;
+        .word1,
+        .word2,
+        .word3,
+        .sign1,
+        .sign2,
+        .sign3 {
+          display: none;
+          margin-left: 0.3rem;
+        }
+        .sign1,
+        .word2 {
+          margin-left: 0;
+        }
       }
       .button-send {
         margin-left: auto;
+        background-color: transparent;
       }
+      .button-send:hover {
+        background-color: var(--global-color-pink);
+      }
+    }
+
+    .display-visible {
+      display: inline-block !important;
+    }
+
+    .alert-message-visible {
+      opacity: 1 !important;
+    }
+
+    .input-border {
+      border: 3px solid var(--global-color-pink) !important;
     }
 
     .contact-bottom {
@@ -528,6 +574,11 @@ body {
 
   .welcome-section {
     .welcome-content {
+      .button-wide {
+        .icon-container {
+          transform: rotate(90deg);
+        }
+      }
       .button-wide:hover {
         background-color: transparent;
       }
@@ -539,6 +590,7 @@ body {
       .projects {
         .project {
           .project-image {
+            background-size: 120%;
             .project-overlay {
               .buttons {
                 .button3:hover {
@@ -612,10 +664,7 @@ body {
     }
   }
 
-  //About section start
   .about-section {
-    @include colorGradient();
-
     .about-content {
       @include flexCenterColumn();
       align-items: center;
@@ -637,6 +686,7 @@ body {
         margin-top: 2rem;
         .technology {
           font-size: 1.5rem;
+          margin-right: 1.5rem;
         }
       }
     }
@@ -645,6 +695,14 @@ body {
   .projects-section {
     .projects-content {
       align-items: center;
+      .projects {
+        .project {
+          .project-image {
+            background-size: 200%;
+          }
+        }
+      }
+
       .project-open {
         .project-about {
           height: 20rem;
@@ -671,11 +729,15 @@ body {
       .message-section {
         justify-content: center;
         padding: 1rem;
-        .name-input,
-        .email-input {
+        .label-name,
+        .label-email {
           width: 100%;
         }
+        .input-field-message {
+          margin-bottom: 0;
+        }
         .button-send {
+          margin-top: 0;
           margin-left: 0;
         }
       }
@@ -687,6 +749,35 @@ body {
         .social-media-icons {
           order: 1;
           margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .contact-section {
+    .contact-content {
+      .contact-bottom {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .content-heading {
+    letter-spacing: 0.3rem;
+  }
+
+  .contact-section {
+    .contact-content {
+      .contact-bottom {
+        padding: 0;
+        .author {
+          span {
+            letter-spacing: 0;
+          }
         }
       }
     }
